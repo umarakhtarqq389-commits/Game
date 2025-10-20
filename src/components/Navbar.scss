@@ -1,0 +1,174 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.7rem 1rem;
+    background: #111;
+    color: #fff;
+  
+    h1 {
+      font-size: 1.2rem;
+      font-weight: 800;
+      letter-spacing: 1px;
+      color: #fbbf24; // golden logo
+    }
+  
+    .menu-btn {
+      background: none;
+      border: none;
+      color: #fff;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+  
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  
+    .auth-buttons {
+      display: flex;
+      gap: 0.6rem;
+  
+      button {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        padding: 0.34rem 0.5rem;
+        font-size: 0.85rem;
+        background: #222;
+        color: #fff;
+        border: 1px solid #333;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: 500;
+        transition: all 0.3s;
+  
+        &:hover {
+          background: #333;
+          border-color: #fbbf24;
+          color: #fbbf24;
+        }
+  
+        svg {
+          flex-shrink: 0;
+        }
+      }
+    }
+  }
+  
+  /* 🌑 Modal Overlay */
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.75);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    animation: fadeIn 0.3s ease-in-out;
+  }
+  
+  /* 📦 Modal Container */
+  .modal-container {
+    background: #1a1a1a;
+    padding: 2rem 1.5rem;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 380px;
+    position: relative;
+    color: #fff;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+    animation: slideUp 0.3s ease-in-out;
+  
+    h2 {
+      text-align: center;
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 1.2rem;
+      color: #fbbf24;
+    }
+  }
+  
+  /* ❌ Close Button */
+  .close-btn {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    padding: 4px;
+    transition: transform 0.2s;
+  
+    &:hover {
+      transform: rotate(90deg);
+      color: #f87171; // red tint
+    }
+  }
+  
+  /* 📝 Form Styles */
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+  
+    input {
+      padding: 0.7rem;
+      border-radius: 8px;
+      border: 1px solid #333;
+      outline: none;
+      background: #2a2a2a;
+      color: #fff;
+      font-size: 0.9rem;
+      transition: all 0.3s;
+  
+      &:focus {
+        border-color: #fbbf24;
+        background: #1f1f1f;
+      }
+    }
+  
+    button {
+      padding: 0.75rem;
+      background: linear-gradient(135deg, #fcd34d, #f59e0b);
+      border: none;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 1rem;
+      cursor: pointer;
+      color: #111;
+      transition: background 0.3s, transform 0.2s;
+  
+      &:hover {
+        background: linear-gradient(135deg, #fbbf24, #f59e0b);
+        transform: translateY(-2px);
+      }
+    }
+  }
+  
+  /* ✨ Animations */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideUp {
+    from {
+      transform: translateY(40px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  

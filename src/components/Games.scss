@@ -1,0 +1,118 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100vh;
+    background: #000; // black from corner to corner
+    color: #fff;
+    overflow-x: hidden; // block horizontal scrollbar
+
+  }
+  
+  // container
+  .all-categories {
+    width: 100%;
+    min-height: 100vh;
+    padding: 0.5rem;
+    background-color: #000; // ensures grid bg is also black
+  
+    // 🔥 Category Heading
+    .category-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin: 1rem 0 0.5rem;
+      color: #fcd34d; // gold
+      letter-spacing: 1px;
+      text-align: left;
+      position: relative;
+  
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        width: 50px;
+        height: 3px;
+        background: linear-gradient(90deg, #fcd34d, transparent);
+        border-radius: 2px;
+      }
+    }
+  
+    // 🔥 Games Grid
+    .games-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+    }
+  
+    // 🔥 Game Card
+    .game-card {
+        background: #111;
+        border-radius: 0.75rem;
+        overflow: hidden;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        cursor: pointer;
+        transition: transform 0.3s, box-shadow 0.3s;
+      
+        &:hover {
+          transform: scale(1.05);
+          box-shadow: 0 8px 20px rgba(0, 0, 0, 0.8);}
+  
+      img {
+        width: 100%;
+        height: auto;        // 👈 allow natural image height
+        max-height: 160px;   // 👈 optional: keep images from getting too tall
+        object-fit: contain; // 👈 show full image without cropping
+        background: #000;    // 👈 fills behind transparent PNGs
+        display: block;
+      }
+  
+      .game-info {
+        padding: 0.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: rgba(0, 0, 0, 0.6);
+    
+        h3 {
+          font-weight: 700;
+          font-size: 0.85rem;
+          color: #fff;
+          margin-bottom: 4px;
+          text-align: center;
+        }
+    
+        button {
+          padding: 3px 6px;
+          background-color: #b45309;
+          color: #fff;
+          font-size: 0.75rem;
+          font-weight: 600;
+          border-radius: 0.5rem;
+          border: none;
+          cursor: pointer;
+          transition: background 0.3s;
+    
+          &:hover {
+            background-color: #78350f;
+          }
+        }
+      }
+    }
+  
+    // 🔥 Responsive Layout
+    @media (max-width: 400px) {
+      .games-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  
+    @media (max-width: 250px) {
+      .games-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  }
+  
